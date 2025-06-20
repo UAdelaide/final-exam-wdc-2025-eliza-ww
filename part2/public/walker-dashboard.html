@@ -44,6 +44,50 @@
         const message = ref('');
         const error = ref('');
         const user = 3;
+        const 
+
+        async function checkRole() {
+          try {
+            const response = await fetch('/api/users/me', {
+              credentials: 'include',
+              cache: 'no-store'
+            });
+
+            if (response.ok) {
+              const user = await response.json();
+              if (user.role = 'owner') {
+                owner.value = true;
+              }
+
+            }
+
+            else {
+              owner.value = false;
+            }
+          }
+
+          catch {
+            //
+          }
+        }
+
+        async function logOut() {
+          // remove session data and redirect to index.html
+          try {
+            const response = await fetch('/api/users/logout', {
+              method: 'POST',
+              credentials: 'include'
+            });
+
+            if (response.ok) {
+              window.location.href = 'index.html';
+            }
+          }
+
+          catch (err) {
+            error.value = 'Error logging out';
+          }
+        }
 
         async function loadWalkRequests() {
           try {

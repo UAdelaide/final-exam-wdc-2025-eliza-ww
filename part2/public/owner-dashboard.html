@@ -92,7 +92,10 @@
 
             if (response.ok) {
               const user = await response.json();
-              owner.value = true;
+              if (user.value = 'owner') {
+                owner.value = true;
+              }
+
             }
 
             else {

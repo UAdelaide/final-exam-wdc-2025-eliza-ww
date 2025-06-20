@@ -62,7 +62,7 @@
 
             if (response.ok) {
               const user = await response.json();
-              if (user.role = 'walker') {
+              if (user.role === 'walker') {
                 // if user role is walker, return true
                 walker.value = true;
               }

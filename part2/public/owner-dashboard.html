@@ -98,7 +98,7 @@
 
             if (response.ok) {
               const user = await response.json();
-              if (user.role = 'owner') {
+              if (user.role === 'owner') {
                 owner.value = true;
               }
 

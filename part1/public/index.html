@@ -24,6 +24,10 @@
                 }
             },
 
+            mounted() {
+                this.url = fetchDogImage()
+            }
+
             methods: {
                 // async function to fetch dog image
                 async fetchDogImage() {

@@ -114,8 +114,6 @@
             if (response.ok) {
               const data = await response.json();
               dogs.value = data;
-
-              console.log(dogs.value); // test
             }
 
             else {
@@ -129,7 +127,7 @@
           }
         }
 
-        function fetchImages() {
+        async function fetchImages() {
           // when async, returns object promise (not the real value)
           // randomly fetch images from dog.ceo for the table
 
@@ -139,7 +137,7 @@
 
             if (data.status === "success") {
               const url = data.message; // if successful, return the new url
-              return url; // and return
+              return url;
             }
           }
 

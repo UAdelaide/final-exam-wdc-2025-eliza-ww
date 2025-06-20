@@ -10,7 +10,9 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', (req, res) => {
     res.cookie('sessionID', '1') {
-        max
+        maxAge: 60,
+        path: '/',
+        
     }
 })
 

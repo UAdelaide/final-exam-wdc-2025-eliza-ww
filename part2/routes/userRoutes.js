@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.user = {
-        id: rows[0].user_id,
+        user_id: rows[0].user_id,
         username: rows[0].username,
         email: rows[0].email
       };

@@ -17,7 +17,7 @@ VALUES ("alice123", "alice@example.com", "hashed123", "owner"),
 ("bobwalker", "bob@example.com", "hashed456", "walker"),
 ("carol123", "carol@example.com", "hashed789", "owner"),
 ("eliza", "eliza@example.com", "hashed699", "walker"),
-("gregoryHouseMD", "mrHouse@example.com", "hashed789", "owner"),;
+("gregoryHouseMD", "drHouse@example.com", "itscanis", "owner"),;
 
 INSERT INTO Dogs (name, size, owner_id)
 VALUES ("Max", "medium",

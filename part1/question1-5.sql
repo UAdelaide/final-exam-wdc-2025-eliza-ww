@@ -31,3 +31,24 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 VALUES ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30, "Parklands", "open"),
 ((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", 45, "Beachside Ave", "accepted"),
 ((SELECT dog_id FROM Dogs WHERE name = "Maple"), "2025-06-20 12:25:00", 30, "North Terrace", "open");
+
+-- other testing
+
+SELECT username AS walker_username, COUNT(username) AS total_ratings,
+AVG(rating) AS average_rating, COUNT(username) AS completed_walks
+FROM WalkRatings
+JOIN Users ON WalkRatings.walker_id = Users.user_id
+GROUP BY username;
+
+-- // {
+-- //     "walker_username": "bobwalker",
+-- //     "total_ratings": 2,
+-- //     "average_rating": 4.5,
+-- //     "completed_walks": 2
+-- //   },
+-- //   {
+-- //     "walker_username": "newwalker",
+-- //     "total_ratings": 0,
+-- //     "average_rating": null,
+-- //     "completed_walks": 0
+-- //   }

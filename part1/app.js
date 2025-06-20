@@ -26,6 +26,17 @@ let db; // connection pool for DogWalkService
     }
 })();
 
+app.get('/', async (req, res) => {
+    try {
+        const [books] = await db.execute('SELECT * FROM books');
+        res.json(books);
+    }
+
+    catch (err) {
+        res.status(500).json({ error: 'Failed to fetch books' });
+    }
+});
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

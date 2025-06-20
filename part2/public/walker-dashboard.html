@@ -151,6 +151,7 @@
         onMounted(() => {
           checkRole();
           loadWalkRequests();
+          getCurrentUser();
         });
 
         return {
@@ -160,7 +161,8 @@
           walker,
           applyToWalk,
           logOut,
-          checkRole
+          checkRole,
+          getCurrentUser
         };
       }
     }).mount('#app');

@@ -140,7 +140,7 @@
 
             if (data.status === "success") {
               url.value = data.message; // if successful, fetch the new url
-              return url; // and return
+              return url.value; // and return
             }
           }
 

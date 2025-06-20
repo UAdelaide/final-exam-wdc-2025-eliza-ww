@@ -14,7 +14,7 @@
     <button type="button" class = "btn btn-success" @click="logOut">Log Out</button>
 
     <!-- Walk request form -->
-    <div v-if = "loggedIn" class="card mb-4">
+    <div v-if = "owner" class="card mb-4">
       <div class="card-header bg-primary text-white">
         Create New Walk Request
       </div>
@@ -46,7 +46,7 @@
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
     <!-- List of walk requests -->
-    <h2 class="mb-3">My Walk Requests</h2>
+    <h2 v-if = "owner" class="mb-3">My Walk Requests</h2>
     <div class="row" v-if="walks.length > 0">
       <div class="col-md-6 mb-4" v-for="walk in walks" :key="walk.request_id">
         <div class="card">

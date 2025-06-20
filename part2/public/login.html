@@ -72,7 +72,11 @@
                 const data = await response.json();
 
                 if (!response.ok) {
-                    error.value = 
+                    error.value = "Login failed";
+                }
+
+                else {
+                    message.value = "Login success!"
                 }
             }
 

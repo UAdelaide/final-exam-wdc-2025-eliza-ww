@@ -45,6 +45,8 @@ router.get('/:id/dogs', async (req, res) => {
       FROM Dogs
       WHERE owner_id = ?
       `, [user_id]);
+
+      res.
   }
 
   catch (error) {

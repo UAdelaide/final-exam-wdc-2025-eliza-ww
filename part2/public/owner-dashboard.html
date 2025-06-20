@@ -82,7 +82,7 @@
         const message = ref('');
         const error = ref('');
 
-        function logOut() {
+        async function logOut() {
           // remove session data and redirect to index.html
           req.session.destroy();
           res.clearCookie('connect.sid');

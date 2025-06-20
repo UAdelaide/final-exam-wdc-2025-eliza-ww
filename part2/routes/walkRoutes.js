@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-// 
+// GET a list of dogs that an user owns
+router.get('/')
 
 // GET all walk requests (for walkers to view)
 router.get('/', async (req, res) => {

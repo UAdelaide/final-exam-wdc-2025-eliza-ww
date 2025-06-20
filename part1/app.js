@@ -9,14 +9,11 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'DogWalkService',
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+db = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'testdb'
 });
 
 app.use(logger('dev'));

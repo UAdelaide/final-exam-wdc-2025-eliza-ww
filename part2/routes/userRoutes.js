@@ -56,7 +56,7 @@ router.post('/login', async (req, res) => {
     };
 
     req.session.save(() => {
-      // console.log(req.session.user.username + " has been logged in");
+      console.log(req.session.user.username + " has been logged in");
       res.json({ message: 'Login successful', user: rows[0] });
     });
   }

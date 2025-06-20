@@ -116,9 +116,9 @@
         async function getCurrentUser() {
           try {
             // call /api/users/me with credentials attached
-            const response = fetch ('/api/users/me', {
-              credentials: 'include'
-            })
+            const response = await fetch('/api/users/me', {
+              credentials: 'include',
+            });
 
             const data = response.json(); // obtain JSON response
             user.value = data.user_id; // assign user id to user here

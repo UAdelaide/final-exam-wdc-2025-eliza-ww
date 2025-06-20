@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -40,7 +41,7 @@ let db;
 
     // creating tables
     await db.execute(`
-      CREATE TABLE IF NOT EXIST Users (
+      CREATE TABLE IF NOT EXISTS Users (
         user_id INT AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR(50) UNIQUE NOT NULL,
         email VARCHAR(100) UNIQUE NOT NULL,

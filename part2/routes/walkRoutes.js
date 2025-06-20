@@ -38,10 +38,11 @@ router.post('/', async (req, res) => {
 // GET a list of dogs that an user owns
 router.get('/dogs', async (req, res) => {
   if (!req.session.user) {
-    return res.status(500).json({ error: 'Failed to get user' })
+    // user is invalid?
+    return res.status(500).json({ error: 'Failed to get user' });
   }
 
-  const user_id = req.session.user.user_id;
+  const user_id = req.session.user.user_id; // get the user id of the logged in user 
 
   try {
     const [dogs] = await db.query(`

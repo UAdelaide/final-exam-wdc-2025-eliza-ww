@@ -107,17 +107,18 @@
 
         async function fetchDogs() {
           // fetch all of the dogs registered in the database
-          
+
           try {
             const response = await fetch('/api/walks/dogs');
 
             if (response.ok) {
               const data = await response.json();
 
+              // add images to the dog array, using fetchImages()
               const withImages = await Promise.all(
                 data.map(async (dog) => {
                   const imageURL = await fetchImages();
-                  return { ...dog, imageURL };
+                  return { ...dog, imageURL }; // merge them together
                 })
               );
 

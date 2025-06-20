@@ -37,7 +37,7 @@ app.get('/', async (req, res) => {
     }
 
     catch (err) {
-        res.status(500).json({ error: 'Failed to fetch books' });
+        res.status(500).json({ error: 'Failed to fetch users' });
     }
 });
 

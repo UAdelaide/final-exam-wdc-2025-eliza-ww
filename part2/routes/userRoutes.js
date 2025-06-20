@@ -55,11 +55,10 @@ router.post('/login', async (req, res) => {
         username: rows[0].username,
         email: rows[0].email
       };
+
+      console.log(req.session.user.username + " has been logged in");
+      res.json({ message: 'Login successful', user: rows[0] });
     });
-
-    console.log(req.session.user.username + " has been logged in");
-
-    res.json({ message: 'Login successful', user: rows[0] });
   }
 
   catch (error) {

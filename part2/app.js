@@ -8,16 +8,6 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', (req, res) => {
-    res.cookie('sessionID', '1') {
-        maxAge: 60,
-        path: '/',
-        domain: 'example.com',
-        secure: true,
-        httpOnly: true
-    }
-})
-
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');

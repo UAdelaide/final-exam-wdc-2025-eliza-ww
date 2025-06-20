@@ -51,13 +51,15 @@
           <h2>All Registered Dogs</h2>
 
           <table class = "table">
-            <tr>
+            <thead>
+              <tr>
               <th>Dog ID</th>
               <th>Name</th>
               <th>Size</th>
               <th>Owner ID</th>
               <th>Photo</th>
-            </tr>
+              </tr>
+            </thead>
 
             <tr v-for = "item in dogs" :key = "item.dog_id">
               <td>

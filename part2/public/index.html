@@ -62,29 +62,27 @@
             </thead>
 
             <tbody>
-
               <tr v-for = "item in dogs" :key = "item.dog_id">
-              <td>
-                {{ item.dog_id }}
-              </td>
+                <td>
+                  {{ item.dog_id }}
+                </td>
 
-              <td>
-                {{ item.name }}
-              </td>
+                <td>
+                  {{ item.name }}
+                </td>
 
-              <td>
-                {{ item.size }}
-              </td>
+                <td>
+                  {{ item.size }}
+                </td>
 
-              <td>
-                {{ item.owner_id }}
-              </td>
+                <td>
+                  {{ item.owner_id }}
+                </td>
 
-              <td>
-                {{ fetchImages() }}
-              </td>
-            </tr>
-
+                <td>
+                  {{ fetchImages() }}
+                </td>
+              </tr>
             </tbody>
           </table>
 

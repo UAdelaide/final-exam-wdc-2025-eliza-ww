@@ -201,6 +201,7 @@
         }
 
         onMounted(() => {
+          getDogs();
           checkRole();
           loadWalks();
         });
@@ -213,7 +214,8 @@
           owner,
           submitWalkRequest,
           checkRole,
-          logOut
+          logOut,
+          getDogs
         };
       }
     }).mount('#app');

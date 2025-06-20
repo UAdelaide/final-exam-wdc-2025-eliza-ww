@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
 
 router.get('/dogs', async (req, res) => {
     try {
-        const [dogs] = await db.execute('SELECT dog_id, name, username FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id');
+        const [dogs] = await db.execute('SELECT dog_id, name, size, owner_id FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id');
         res.json(dogs);
     }
 

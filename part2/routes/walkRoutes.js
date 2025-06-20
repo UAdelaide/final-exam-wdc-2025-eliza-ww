@@ -2,21 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-// GET a list of dogs that an user owns
-router.get('/', async (req, res) => {
-  try {
-    const [dogs] = await db.query(`
-      SELECT dog_id, owner_id, name, size
-      FROM Dogs
-      WHERE 
-      `)
-  }
-
-  catch (error) {
-    //
-  }
-})
-
 // GET all walk requests (for walkers to view)
 router.get('/', async (req, res) => {
   try {
@@ -49,6 +34,21 @@ router.post('/', async (req, res) => {
     res.status(500).json({ error: 'Failed to create walk request' });
   }
 });
+
+// GET a list of dogs that an user owns
+router.get('/', async (req, res) => {
+  try {
+    const [dogs] = await db.query(`
+      SELECT dog_id, owner_id, name, size
+      FROM Dogs
+      WHERE
+      `)
+  }
+
+  catch (error) {
+    //
+  }
+})
 
 // POST an application to walk a dog (from walker)
 router.post('/:id/apply', async (req, res) => {

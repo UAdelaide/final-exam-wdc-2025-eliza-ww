@@ -124,7 +124,7 @@
 
         function redirect(role) {
           // redirect to dash board
-          
+
           if (role === 'owner') {
             window.location.href = 'owner-dashboard.html';
           }
@@ -135,13 +135,14 @@
         }
 
         onMounted(() => {
-            checkRole();
+            checkRole(); // check role upon opening
         });
 
         return {
           form,
           message,
           error,
+          loggedIn,
           logIn
         };
       }

@@ -9,13 +9,11 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-let db; // connection pool for DogWalkService
-
 let db = mysql.createPool({
-            host: 'localhost',
-            user: 'root',
-            password: '',
-            database: 'DogWalkService'
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'DogWalkService'
 });
 
 (async () => {

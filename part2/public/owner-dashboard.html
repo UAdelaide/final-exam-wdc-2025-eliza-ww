@@ -104,9 +104,9 @@
               cache: 'no-store'
             });
 
-            const user_id = user.json();
+            const user_id = await user.json();
 
-            const response = await fetch('/api/walk/{{user.user_id}}/dogs'); // get id here
+            const response = await fetch('/api/walk/{{user_id.user_id}}/dogs'); // get id here
 
           }
 

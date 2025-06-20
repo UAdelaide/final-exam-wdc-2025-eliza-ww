@@ -106,7 +106,9 @@
 
         async function checkRole() {
           try {
-            const response = await fetch('')
+            const response = await fetch('/api/users/me', {
+              credentials: 'include'
+            });
           }
         }
 

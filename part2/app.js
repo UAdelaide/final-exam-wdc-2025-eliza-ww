@@ -9,7 +9,8 @@ const app = express();
 app.use(session({
     secret: 'password',
     cookie: {
-        
+        httpOnly: true,
+        maxAge: 30
     }
 }))
 app.use(express.json());

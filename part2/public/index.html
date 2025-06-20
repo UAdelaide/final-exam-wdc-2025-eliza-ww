@@ -106,6 +106,8 @@
         const dogs = ref([]); // empty array for all the dogs
 
         async function fetchDogs() {
+          // fetch all of the dogs registered in the database
+          
           try {
             const response = await fetch('/api/walks/dogs');
 

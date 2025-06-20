@@ -46,13 +46,13 @@ router.get('/:id/dogs', async (req, res) => {
       WHERE owner_id = ?
       `, [user_id]);
 
-      res.
+      res.json(dogs);
   }
 
   catch (error) {
     //
   }
-})
+});
 
 // POST an application to walk a dog (from walker)
 router.post('/:id/apply', async (req, res) => {

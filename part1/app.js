@@ -2,12 +2,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-// var mysql = require('mysql2/promise');
+var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+const pool = mysql.createPool({
+    host: 'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'DogWalkService',
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+});
 
 app.use(logger('dev'));
 app.use(express.json());

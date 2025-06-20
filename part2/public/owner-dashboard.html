@@ -99,11 +99,12 @@
 
         async function getDogs() {
           try {
-            const userdata = await fetch('/api/users/me', {
+            const user = await fetch('/api/users/me', {
               credentials: 'include',
               cache: 'no-store'
             });
-            
+
+            const user_id = user.json();
 
             const response = await fetch('/api/walk/{{user.user_id}}/dogs'); // get id here
 

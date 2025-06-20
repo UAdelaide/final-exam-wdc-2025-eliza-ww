@@ -107,8 +107,7 @@
             const user_id = await user.json();
 
             const response = await fetch('/api/walk/{{user_id.user_id}}/dogs'); // get id here
-            const dogs = 
-
+            const dogs = await response.json();
           }
 
           catch {
@@ -137,7 +136,7 @@
           }
 
           catch {
-            //
+            owner.value = false;
           }
         }
 

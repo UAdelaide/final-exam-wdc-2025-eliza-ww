@@ -19,14 +19,10 @@
         Vue.createApp ({
             data() {
                 return {
-                    // default dog
+                    // default dog if fetch does not work
                     url: "https://images.dog.ceo/breeds/rottweiler/n02106550_193.jpg"
                 }
             },
-
-            mounted() {
-                this.url = fetchDogImage()
-            }
 
             methods: {
                 // async function to fetch dog image
@@ -44,6 +40,10 @@
                         console.error('failed to fetch dog image', err);
                     }
                 }
+            },
+
+            mounted() {
+                this.url = fetchDogImage()
             }
         }).mount('#app')
     </script>

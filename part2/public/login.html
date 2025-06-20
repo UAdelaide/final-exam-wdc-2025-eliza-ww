@@ -55,6 +55,8 @@
         const error = ref('');
 
         async function logIn() {
+            message.value = '';
+
             try {
                 const response = await fetch('/api/users/login', {
                     method: 'POST',

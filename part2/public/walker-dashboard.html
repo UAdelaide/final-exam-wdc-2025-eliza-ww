@@ -115,12 +115,13 @@
 
         async function getCurrentUser() {
           try {
+            // call /api/users/me with credentials attached
             const response = fetch ('/api/users/me', {
               credentials: 'include'
             })
 
-            const data = response.json();
-            user.value = data.user_id;
+            const data = response.json(); // obtain JSON response
+            user.value = data.user_id; // assign user value to 
           }
 
           catch {

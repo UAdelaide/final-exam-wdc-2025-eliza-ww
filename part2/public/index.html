@@ -113,8 +113,11 @@
             if (response.ok) {
               const user = await response.json();
               loggedIn.value = true;
-              userRole.value = user.role;
-              redirect
+              redirect(user.role);
+            }
+
+            else {
+              
             }
           }
 

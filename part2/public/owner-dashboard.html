@@ -85,10 +85,14 @@
         async function logOut() {
           // remove session data and redirect to index.html
           try {
-            const res = await fetch('/api/users/logout', {
+            const response = await fetch('/api/users/logout', {
               method: 'POST',
               credentials: 'include'
             });
+
+            if (response.ok) {
+              
+            }
 
             window.location.href = 'index.html';
           }

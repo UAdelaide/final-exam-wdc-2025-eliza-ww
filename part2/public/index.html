@@ -24,27 +24,27 @@
 
         <div class="card-body">
           <form @submit.prevent="logIn">
-          <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input v-model="form.email" type="text" class="form-control" required>
-        </div>
+            <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input v-model="form.email" type="text" class="form-control" required>
+            </div>
 
-        <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input v-model="form.password" type="password" class="form-control" required>
-        </div>
+            <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input v-model="form.password" type="password" class="form-control" required>
+            </div>
 
-        <button type="submit" class="btn btn-success">Log In</button>
-        </form>
-        </div>
-        </div>
+            <button type="submit" class="btn btn-success">Log In</button>
+            </form>
+            </div>
+            </div>
 
-        <!-- Success or error messages -->
-        <div v-if="message" class="alert alert-info">{{ message }}</div>
-        <div v-if="error" class="alert alert-danger">{{ error }}</div>
+            <!-- Success or error messages -->
+            <div v-if="message" class="alert alert-info">{{ message }}</div>
+            <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
+          </div>
         </div>
-      </div>
 
       <div v-if = "owner">
         <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>

@@ -44,8 +44,7 @@
     <div v-if="message" class="alert alert-info">{{ message }}</div>
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
-    <!-- List of walk requests -->
-  </div>
+</div>
 
   <script>
     const { createApp, ref, onMounted } = Vue;
@@ -53,10 +52,8 @@
     createApp({
       setup() {
         const form = ref({
-          dog_id: '',
-          requested_time: '',
-          duration_minutes: '',
-          location: ''
+          username: '',
+          password: '',
         });
 
         const walks = ref([]);

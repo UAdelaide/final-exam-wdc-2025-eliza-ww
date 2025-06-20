@@ -5,7 +5,9 @@ const db = require('../models/db');
 // GET a list of dogs that an user owns
 router.get('/', async (req, res) => {
   try {
-    const [dogs] = await 
+    const [dogs] = await db.query(`
+      SELECT 
+      `)
   }
 
   catch (error) {

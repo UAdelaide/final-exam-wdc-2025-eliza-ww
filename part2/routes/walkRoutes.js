@@ -35,6 +35,17 @@ router.post('/', async (req, res) => {
   }
 });
 
+app.get('/api/dogs', async (req, res) => {
+    try {
+        const [dogs] = await db.execute('SELECT name, size, username FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id');
+        res.json(dogs);
+    }
+
+    catch (err) {
+        res.status(500).json({ error: 'Failed to fetch users' });
+    }
+});
+
 // GET a list of dogs that an user owns
 router.get('/dogs', async (req, res) => {
   if (!req.session.user) {

@@ -11,6 +11,11 @@ VALUES ("alice123", "alice@example.com", "hashed123", "owner"),
 ("eliza", "eliza@example.com", "hashed699", "owner"),
 ("gregoryHouseMD", "drHouse@example.com", "itslupus", "walker");
 
+-- Five dogs:
+-- A dog named Max, who is medium-sized and owned by alice123.
+-- A dog named Bella, who is small and owned by carol123.
+-- Three more dogs with details of your choosing.
+
 INSERT INTO Dogs (name, size, owner_id)
 VALUES ("Max", "medium",
 (SELECT user_id FROM Users WHERE username = "alice123")),

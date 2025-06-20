@@ -36,7 +36,8 @@ router.post('/', async (req, res) => {
 });
 
 // GET a list of dogs that an user owns
-router.get('/', async (req, res) => {
+router.get('/:id/dogs', async (req, res) => {
+  const 
   try {
     const [dogs] = await db.query(`
       SELECT dog_id, owner_id, name, size

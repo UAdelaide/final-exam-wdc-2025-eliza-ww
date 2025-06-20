@@ -107,6 +107,8 @@
             if (response.ok) {
               const data = response.json();
               dogs.value = data;
+
+              console.log(dogs); // test
             }
 
             else {

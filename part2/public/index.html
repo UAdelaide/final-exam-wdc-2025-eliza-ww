@@ -114,6 +114,10 @@
             }
 
           }
+
+          catch {
+            error.value = "Failed to fetch all dogs";
+          }
         }
 
         async function fetchImages() {

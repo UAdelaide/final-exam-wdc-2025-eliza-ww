@@ -35,7 +35,8 @@
     </div>
     <p v-else>No available walk requests at the moment.</p>
     </div>
-<!-- if not logged in with walker role, display error -->
+
+    <!-- if not logged in with walker role, display error -->
     <div v-else class="alert alert-danger">You are not authorised to see this page.</div>
   </div>
 
@@ -51,6 +52,8 @@
         const walker = ref(false);
 
         async function checkRole() {
+          // check what role the user has
+
           try {
             const response = await fetch('/api/users/me', {
               credentials: 'include',

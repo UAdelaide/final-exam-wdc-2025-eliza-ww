@@ -56,6 +56,65 @@
   </div>
 
   <script>
+    const { createApp, ref, onMounted } = Vue;
+
+    createApp({
+      setup() {
+        const form = ref({
+          username: '',
+          password: '',
+        });
+
+        const message = ref('');
+        const error = ref('');
+
+        async function logIn() {
+            message.value = '';
+            error.value = '';
+
+            try {
+                const response = await fetch('/api/users/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: form.value.email,
+                        password: form.value.password
+                    })
+                })
+
+                // route /users/login returns the following object
+                // res.json({ message: 'Login successful', user: rows[0] });
+                const data = await response.json();
+
+                if (!response.ok) {
+                    error.value = "Login failed!";
+                }
+
+                else {
+                    message.value = "Login successful!";
+                }
+            }
+
+            catch (err) {
+                message.value = "Error logging in.";
+            }
+        }
+
+        onMounted(() => {
+            // nothing happens upon loading
+        });
+
+        return {
+          form,
+          message,
+          error,
+          logIn
+        };
+      }
+    }).mount('#app');
+    
     const { createApp } = Vue;
     createApp({
       data() {

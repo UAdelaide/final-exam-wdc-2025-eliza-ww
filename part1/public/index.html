@@ -29,9 +29,10 @@
                 async fetchDogImage() {
                     try {
                         const response = await fetch("https://dog.ceo/api/breeds/image/random");
+                        const data = await response.json();
 
-                        if (response.status == 'success') {
-                            url = response.message;
+                        if (data.status == 'success') {
+                            this.url = response.message;
                         }
                     }
 

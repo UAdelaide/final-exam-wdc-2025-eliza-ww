@@ -67,7 +67,7 @@ let db;
             status ENUM('open', 'accepted', 'completed', 'cancelled') DEFAULT 'open',
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
-        );
+        )
 
         CREATE TABLE IF NOT EXISTS WalkApplications (
             application_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -78,7 +78,7 @@ let db;
             FOREIGN KEY (request_id) REFERENCES WalkRequests(request_id),
             FOREIGN KEY (walker_id) REFERENCES Users(user_id),
             CONSTRAINT unique_application UNIQUE (request_id, walker_id)
-        );
+        )
 
         CREATE TABLE IF NOT EXISTS WalkRatings (
             rating_id INT AUTO_INCREMENT PRIMARY KEY,

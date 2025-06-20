@@ -82,6 +82,24 @@
         const message = ref('');
         const error = ref('');
 
+        async function checkRole() {
+          try {
+            const response = await fetch('/api/users/me', {
+              credentials: 'include',
+              cache: 'no-store'
+            });
+
+            if (response.ok) {
+              const user = await response.json();
+              loggedIn.value = true;
+              redirect(user.role);
+            }
+
+            else {
+              loggedIn.value = false;
+            }
+        }
+
         async function logOut() {
           // remove session data and redirect to index.html
           try {

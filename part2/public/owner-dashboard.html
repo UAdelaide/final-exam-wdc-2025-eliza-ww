@@ -26,7 +26,7 @@
           <div class="mb-3">
             <label class="form-label">Dog ID</label>
 
-            <!-- shows a  -->
+            <!-- shows options through vue loop -->
             <select v-model="form.dog_id" name = "Dog ID" class="form-select" required>
               <option v-for="item in dogs" :key = "item.dog_id" :value = "item.dog_id">
                 {{ item.name }}

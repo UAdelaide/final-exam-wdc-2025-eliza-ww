@@ -3,14 +3,6 @@
 -- A user with the username bobwalker, email bob@example.com, password hash hashed456, and role walker.
 -- A user with the username carol123, email carol@example.com, password hash hashed789, and role owner.
 -- Two more users with details of your choosing.
--- Five dogs:
--- A dog named Max, who is medium-sized and owned by alice123.
--- A dog named Bella, who is small and owned by carol123.
--- Three more dogs with details of your choosing.
--- Five walk requests:
--- A request for Max at 2025-06-10 08:00:00 for 30 minutes at Parklands, with status open.
--- A request for Bella at 2025-06-10 09:30:00 for 45 minutes at Beachside Ave, with status accepted.
--- Three more walk requests with details of your choosing.
 
 INSERT INTO Users (username, email, password_hash, role)
 VALUES ("alice123", "alice@example.com", "hashed123", "owner"),
@@ -27,28 +19,12 @@ VALUES ("Max", "medium",
 ("Maple", "medium",
 (SELECT user_id FROM Users WHERE username = "eliza"));
 
+-- Five walk requests:
+-- A request for Max at 2025-06-10 08:00:00 for 30 minutes at Parklands, with status open.
+-- A request for Bella at 2025-06-10 09:30:00 for 45 minutes at Beachside Ave, with status accepted.
+-- Three more walk requests with details of your choosing.
+
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
 VALUES ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30, "Parklands", "open"),
 ((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", 45, "Beachside Ave", "accepted"),
 ((SELECT dog_id FROM Dogs WHERE name = "Maple"), "2025-06-20 12:25:00", 30, "North Terrace", "open");
-
--- other testing
-
-SELECT username AS walker_username, COUNT(username) AS total_ratings,
-AVG(rating) AS average_rating, COUNT(username) AS completed_walks
-FROM WalkRatings
-JOIN Users ON WalkRatings.walker_id = Users.user_id
-GROUP BY username;
-
--- // {
--- //     "walker_username": "bobwalker",
--- //     "total_ratings": 2,
--- //     "average_rating": 4.5,
--- //     "completed_walks": 2
--- //   },
--- //   {
--- //     "walker_username": "newwalker",
--- //     "total_ratings": 0,
--- //     "average_rating": null,
--- //     "completed_walks": 0
--- //   }

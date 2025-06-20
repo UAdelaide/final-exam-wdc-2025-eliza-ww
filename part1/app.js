@@ -13,6 +13,8 @@ let db; // connection pool for DogWalkService
 
 (async () => {
     try {
+        console.log("connecting");
+
         db = await mysql.createConnection({
             host: 'localhost',
             user: 'root',

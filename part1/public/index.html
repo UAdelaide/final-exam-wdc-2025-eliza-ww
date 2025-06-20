@@ -5,15 +5,6 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
-        Vue.createApp ({
-            data() {
-                return {
-                    url: NULL
-                }
-            }
-        })
-    </script>
-    <script>
         // async function to fetch dog image
 
         async function fetchDogImage() {
@@ -38,6 +29,17 @@
 
         <img :src = "URL."></img>
     </div>
+
+<script>
+Vue.createApp ({
+    data() {
+        return {
+            url: NULL
+        }
+    }
+}).mount('#app')
+</script>
+
 </body>
 
 </html>

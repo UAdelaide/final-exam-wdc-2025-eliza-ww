@@ -11,7 +11,12 @@ var app = express();
 
 let db; // connection pool for DogWalkService
 
-let db = 
+let db = mysql.createPool({
+            host: 'localhost',
+            user: 'root',
+            password: '',
+            database: 'testdb'
+});
 
 (async () => {
     try {

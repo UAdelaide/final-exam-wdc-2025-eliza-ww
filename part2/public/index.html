@@ -137,8 +137,7 @@
         }
 
         async function fetchImages() {
-          // when async, returns object promise (not the real value)
-          // randomly fetch images from dog.ceo for the table
+          // randomly fetch an URL from dog.ceo
 
           try {
             const response = await fetch("https://dog.ceo/api/breeds/image/random");

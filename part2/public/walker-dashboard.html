@@ -116,8 +116,12 @@
         async function getCurrentUser() {
           try {
             const response = fetch ('/api/users/me', {
-              
+              credentials: 'include'
             })
+          }
+
+          catch {
+            error.value = 'Could not process application';
           }
         }
 

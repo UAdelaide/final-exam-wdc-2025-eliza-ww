@@ -103,7 +103,6 @@
         const loggedIn = ref(false);
         const message = ref('');
         const error = ref('');
-        const url = ref('');
         const dogs = ref([]); // empty array for all the dogs
 
         async function fetchDogs() {
@@ -139,8 +138,8 @@
             const data = response.json();
 
             if (data.status === "success") {
-              url.value = data.message; // if successful, fetch the new url
-              return url.value; // and return
+              const url = data.message; // if successful, return the new url
+              return url; // and return
             }
           }
 

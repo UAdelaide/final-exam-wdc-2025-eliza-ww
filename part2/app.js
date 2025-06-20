@@ -12,6 +12,7 @@ app.get('/', (req, res) => {
     res.cookie('sessionID', '1') {
         maxAge: 60,
         path: '/',
+        domain: 'example.com',
         
     }
 })

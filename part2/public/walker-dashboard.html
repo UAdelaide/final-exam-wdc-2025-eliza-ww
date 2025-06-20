@@ -133,7 +133,7 @@
 
         async function applyToWalk(requestId) {
           try {
-            console.log(requestID + " has applied"); // TESTING
+            console.log(requestId + " has applied"); // TESTING
 
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',

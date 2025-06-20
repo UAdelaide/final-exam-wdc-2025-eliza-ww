@@ -11,6 +11,9 @@
   <div id="app" class="container py-4">
     <h1 class="mb-4 text-success">Walker Dashboard</h1>
 
+    <!-- log out button -->
+    <button type="button" class = "btn btn-success" @click="logOut">Log Out</button>
+
     <div v-if = "walker">
     <!-- Alert messages -->
     <div v-if="message" class="alert alert-info">{{ message }}</div>

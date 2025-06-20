@@ -75,7 +75,7 @@
               </td>
 
               <td>
-                {{ url }}
+                {{ fetchImages() }}
               </td>
             </tr>
           </table>
@@ -133,6 +133,7 @@
 
             if (data.status === "success") {
               url.value = data.message; // if successful, fetch the new url
+              return url; // and return
             }
           }
 

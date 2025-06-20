@@ -101,7 +101,7 @@
         const dogs = ref([]); // empty array for all the dogs
 
         async function fetchDogs() {
-          console.log(dogs.value); // test
+          console.log("attempting to fetch dogs!"); // test
 
           try {
             const response = await fetch('/api/walks/dogs');

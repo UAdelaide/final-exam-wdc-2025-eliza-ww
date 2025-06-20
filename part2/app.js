@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
         path: '/',
         domain: 'example.com',
         secure: true,
-        
+        httpOnly: true
     }
 })
 

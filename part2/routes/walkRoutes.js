@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-app.get('/api/dogs', async (req, res) => {
+router.get('/dogs', async (req, res) => {
     try {
         const [dogs] = await db.execute('SELECT name, size, username FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id');
         res.json(dogs);

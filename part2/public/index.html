@@ -114,7 +114,8 @@
               const withImages = await Promise.all(
                 data.map(async (dog) => {
                   try {
-                    const imageResponse = await fetch('')
+                    const imageURL = await fetchImages();
+                    return { dog, imageURL };
                   }
                 })
               )

@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(session({
-    secret: 'password',
+    secret: 'secret',
     cookie: {
         httpOnly: true,
         maxAge: 1000 * 60 * 60

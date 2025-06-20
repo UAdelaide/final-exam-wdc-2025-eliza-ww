@@ -63,7 +63,7 @@
             if (response.ok) {
               const user = await response.json();
               if (user.role = 'walker') {
-                // if 
+                // if
                 walker.value = true;
               }
 
@@ -134,7 +134,8 @@
           walks,
           message,
           error,
-          applyToWalk
+          applyToWalk,
+          logOut
         };
       }
     }).mount('#app');

@@ -110,7 +110,11 @@
               credentials: 'include'
             });
 
-            dogs.value = await response.json();
+            const data = await response.json();
+
+            console.log('Fetched dogs:', data); // <-- Add this line
+
+            dogs.value = data;
           }
 
           catch {

@@ -84,6 +84,7 @@
 
         function logOut() {
           // remove session data and redirect to index.html
+          req.session.destroy();
         }
 
         async function loadWalks() {

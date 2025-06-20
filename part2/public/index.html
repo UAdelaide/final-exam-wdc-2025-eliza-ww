@@ -114,11 +114,22 @@
               const user = await response.json();
               loggedIn.value = true;
               userRole.value = user.role;
+              redirect
             }
           }
 
           catch (err) {
             loggedIn.value = false;
+          }
+        }
+
+        function redirect(role) {
+          if (role === 'owner') {
+            window.location.href = 'owner-dashboard.html';
+          }
+
+          else if (role === 'walker') {
+            window.location.href = 'walker-dashboard.html';
           }
         }
 

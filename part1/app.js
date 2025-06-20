@@ -19,12 +19,12 @@ let db;
 
 // borrowing code from \starthere
 (async () => {
-  try {
+    try {
     // Connect to MySQL without specifying a database
     const connection = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '' // Set your MySQL root password
+        host: 'localhost',
+        user: 'root',
+        password: '' // Set your MySQL root password
     });
 
     // Create the database if it doesn't exist
@@ -33,10 +33,10 @@ let db;
 
     // Now connect to the created database
     db = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'DogWalkService'
+        host: 'localhost',
+        user: 'root',
+        password: '',
+        database: 'DogWalkService'
     });
 
     // creating tables
@@ -99,40 +99,40 @@ let db;
     const [userCount] = await db.execute('SELECT COUNT(*) AS count FROM Users');
 
     if (userCount[0].count === 0) {
-      await db.execute(`
+        await db.execute(`
         INSERT INTO Users (username, email, password_hash, role)
         VALUES ("alice123", "alice@example.com", "hashed123", "owner"),
         ("bobwalker", "bob@example.com", "hashed456", "walker"),
         ("carol123", "carol@example.com", "hashed789", "owner");
-      `);
+        `);
     }
 
     const [dogCount] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
 
     if (dogCount[0].count === 0) {
-      await db.execute(`
+        await db.execute(`
         INSERT INTO Dogs (name, size, owner_id)
         VALUES ("Max", "medium",
         (SELECT user_id FROM Users WHERE username = "alice123")),
         ("Bella", "small",
         (SELECT user_id FROM Users WHERE username = "carol123"));
-      `);
+        `);
     }
 
     const [walkCount] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
 
     if (walkCount[0].count === 0) {
-      await db.execute(`
+        await db.execute(`
         INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
         VALUES ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30, "Parklands", "open"),
         ((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", 45, "Beachside Ave", "accepted");
-      `);
+        `);
     }
-  }
+    }
 
-  catch (err) {
-    console.error('Error starting database', err);
-  }
+    catch (err) {
+        console.error('Error starting database', err);
+    }
 })();
 
 // Route to return books as JSON

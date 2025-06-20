@@ -13,7 +13,7 @@
 
         <button @click="fetchDogImage()"> Click me please</button>
 
-        <img :src = "URL."></img>
+        <img :src = this.url></img>
     </div>
 
     <script>
@@ -29,10 +29,10 @@
                 async fetchDogImage() {
                     try {
                         const response = await fetch("https://dog.ceo/api/breeds/image/random");
+
                         if (response.status == 'success') {
-                            
+                            url = response.message;
                         }
-                        url = response.message;
                     }
 
                     catch (err) {

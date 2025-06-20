@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 let db;
 
+// borrowing code from \starthere
 (async () => {
   try {
     // Connect to MySQL without specifying a database

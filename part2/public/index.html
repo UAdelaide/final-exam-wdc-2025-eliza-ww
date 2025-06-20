@@ -13,11 +13,14 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
-      <div class = >
+      <div v-if = "loggedIn">
         <a href="login.html" class="btn btn-outline-primary me-2">Log In</a>
       </div>
 
-    <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
+      <div>
+        <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
+      </div>
+
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
   </div>
 

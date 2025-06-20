@@ -10,12 +10,18 @@ var usersRouter = require('./routes/users');
 var app = express();
 
 (async () => {
-    db = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'testdb'
-    });
+    try {
+        db = await mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: '',
+            database: 'testdb'
+        });
+    }
+
+    catch {
+        //
+    }
 }
 
 app.use(logger('dev'));

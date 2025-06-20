@@ -37,8 +37,9 @@ router.get('/me', (req, res) => {
 });
 
 router.post('/logout', async(req, res) => {
+  // destroy session data with req.session.destroy()
   req.session.destroy(() => {
-    res.clearCookie('connect.sid');
+    res.clearCookie('connect.sid'); // clear cookie on client side
     res.json({ message: 'Logged out!' });
   });
 });

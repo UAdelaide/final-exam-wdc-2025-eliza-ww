@@ -10,9 +10,10 @@ app.use(session({
     secret: 'password',
     cookie: {
         httpOnly: true,
-        maxAge: 30
+        maxAge: 1000 * 60 * 60
     }
-}))
+}));
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 

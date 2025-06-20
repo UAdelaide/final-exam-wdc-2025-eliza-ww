@@ -45,24 +45,6 @@
     <div v-if="error" class="alert alert-danger">{{ error }}</div>
 
     <!-- List of walk requests -->
-    <h2 class="mb-3">My Walk Requests</h2>
-    <div class="row" v-if="walks.length > 0">
-      <div class="col-md-6 mb-4" v-for="walk in walks" :key="walk.request_id">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Request #{{ walk.request_id }}</h5>
-            <p class="card-text">
-              <strong>Dog:</strong> {{ walk.dog_name }} ({{ walk.size }})<br>
-              <strong>Date:</strong> {{ new Date(walk.requested_time).toLocaleString() }}<br>
-              <strong>Duration:</strong> {{ walk.duration_minutes }} minutes<br>
-              <strong>Location:</strong> {{ walk.location }}<br>
-              <strong>Status:</strong> {{ walk.status }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p v-else>No walk requests yet.</p>
   </div>
 
   <script>

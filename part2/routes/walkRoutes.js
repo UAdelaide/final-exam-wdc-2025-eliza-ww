@@ -42,9 +42,10 @@ router.get('/dogs', async (req, res) => {
     return res.status(500).json({ error: 'Failed to get user' });
   }
 
-  const user_id = req.session.user.user_id; // get the user id of the logged in user 
+  const user_id = req.session.user.user_id; // get the user id of the logged in user
 
   try {
+    // use a parameterised query to prevent SQL injections
     const [dogs] = await db.query(`
       SELECT dog_id, owner_id, name, size
       FROM Dogs

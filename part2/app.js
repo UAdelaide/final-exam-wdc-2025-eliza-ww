@@ -13,6 +13,7 @@ app.get('/', (req, res) => {
         maxAge: 60,
         path: '/',
         domain: 'example.com',
+        secure: true,
         
     }
 })

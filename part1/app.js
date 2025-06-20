@@ -9,12 +9,14 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-db = await mysql.createConnection({
+(async () => {
+    db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '',
       database: 'testdb'
-});
+    });
+}
 
 app.use(logger('dev'));
 app.use(express.json());

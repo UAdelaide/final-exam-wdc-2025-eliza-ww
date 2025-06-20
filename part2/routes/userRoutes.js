@@ -35,7 +35,9 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-router.get('')
+router.get('/logout', async(req, res) => {
+  req.session.destroy(() => {})
+})
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {

@@ -4,19 +4,6 @@
     <title>Dog Walk Service</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script>
-        // async function to fetch dog image
-        async function fetchDogImage() {
-            try {
-                const URL = await fetch("https://dog.ceo/api/breeds/image/random");
-                const json = await URL.json();
-            }
-
-            catch (err) {
-                res.status(500).json({ error: 'Failed to fetch dog image' });
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -37,7 +24,19 @@
                 }
             },
 
-            methods: 
+            methods: {
+                // async function to fetch dog image
+                async function fetchDogImage() {
+                    try {
+                        const URL = await fetch("https://dog.ceo/api/breeds/image/random");
+                        const json = await URL.json();
+                    }
+
+                    catch (err) {
+                        res.status(500).json({ error: 'Failed to fetch dog image' });
+                    }
+                };
+            }
         }).mount('#app')
     </script>
 </body>

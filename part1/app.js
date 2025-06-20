@@ -16,25 +16,6 @@ let db = mysql.createPool({
     database: 'DogWalkService'
 });
 
-(async () => {
-    try {
-        console.log("connecting");
-
-        db = await mysql.createConnection({
-            host: 'localhost',
-            user: 'root',
-            password: '',
-            database: 'testdb'
-        });
-
-        console.log("connected");
-    }
-
-    catch (err) {
-        console.error('Error setting up database', err);
-    }
-})();
-
 app.get('/', async (req, res) => {
     try {
         const [user] = await db.execute('SELECT * FROM Dogs');

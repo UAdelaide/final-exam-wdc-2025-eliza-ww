@@ -18,7 +18,7 @@ let db = mysql.createPool({
 
 app.get('/api/dogs', async (req, res) => {
     try {
-        const [user] = await db.execute('SELECT name, size, username FROM Dogs JOIN Users ON Dogs.user_id = ');
+        const [user] = await db.execute('SELECT name, size, username FROM Dogs JOIN Users ON Dogs.user_id = Users.user_id');
         res.json(user);
     }
 

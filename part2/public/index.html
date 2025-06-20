@@ -117,7 +117,8 @@
                   const imageURL = await fetchImages();
                   return { dog, imageURL };
                 })
-              )
+              );
+              
               dogs.value = data;
             }
 

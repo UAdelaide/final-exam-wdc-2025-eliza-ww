@@ -37,6 +37,7 @@ router.post('/', async (req, res) => {
 
 // GET a list of dogs that an user owns
 router.get('/dogs', async (req, res) => {
+  if ()
   const user_id = req.session.user.user_id;
 
   try {

@@ -109,7 +109,7 @@
             if (response.ok) {
               const user = await response.json();
               loggedIn.value = true;
-              redirect(user.role);
+              redirect(user.role); // if logged in, redirect to dashboard
             }
 
             else {
@@ -123,6 +123,8 @@
         }
 
         function redirect(role) {
+          // redirect to dash board
+          
           if (role === 'owner') {
             window.location.href = 'owner-dashboard.html';
           }

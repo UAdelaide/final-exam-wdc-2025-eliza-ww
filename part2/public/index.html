@@ -101,6 +101,8 @@
         const dogs = ref([]); // empty array for all the dogs
 
         async function fetchDogs() {
+          console.log(dogs.value); // test
+
           try {
             const response = await fetch('/api/walks/dogs');
 
@@ -108,7 +110,7 @@
               const data = response.json();
               dogs.value = data;
 
-              console.log(dogs); // test
+              console.log(dogs.value); // test
             }
 
             else {

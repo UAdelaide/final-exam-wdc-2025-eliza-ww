@@ -37,13 +37,14 @@ router.post('/', async (req, res) => {
 
 // GET a list of dogs that an user owns
 router.get('/:id/dogs', async (req, res) => {
-  const 
+  const user_id = req.session.user_id;
+
   try {
     const [dogs] = await db.query(`
       SELECT dog_id, owner_id, name, size
       FROM Dogs
-      WHERE
-      `)
+      WHERE user_id = ?
+      `, [user_id])
   }
 
   catch (error) {

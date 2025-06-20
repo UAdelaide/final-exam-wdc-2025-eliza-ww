@@ -26,7 +26,7 @@
 
             methods: {
                 // async function to fetch dog image
-                async function fetchDogImage() {
+                async fetchDogImage() {
                     try {
                         const URL = await fetch("https://dog.ceo/api/breeds/image/random");
                         const json = await URL.json();

@@ -96,11 +96,11 @@
         const error = ref('');
         const owner = ref(false);
 
-        async func getDogs() {
+        async function getDogs() {
           try {
             const response = await fetch('/api/walk/{{user.user_id}}/dogs')
           }
-        }
+        };
 
         async function checkRole() {
           try {

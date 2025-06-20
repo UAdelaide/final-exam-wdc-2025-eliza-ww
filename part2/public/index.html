@@ -79,8 +79,7 @@
                     })
                 })
 
-                // route /users/login returns the following object
-                // res.json({ message: 'Login successful', user: rows[0] });
+                // route '/users/login' returns a message and the user
                 const data = await response.json();
 
                 if (!response.ok) {

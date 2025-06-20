@@ -14,9 +14,11 @@
             color: #00B7FF;
         }
 
-        button {
+        .button {
             margin-top: 400px;
-            color: blue;
+            margin-right: 400px;
+            background-color: blue;
+            color: red;
         }
     </style>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -25,10 +27,15 @@
 <body>
     <div id = "app">
         <h1>Dog of the Day</h1>
-        <p>Today's dog of the day...</p>
 
-        <button @click="fetchDogImage()"> CLICK</button>
-        <img :src = "this.url" width = 800></img>
+        <button class = "button" @click="hide()"> PLEASE CLICK ME</button>
+
+        <div v-if = "visible" class = "about">
+            <p>Today's dog of the day... please click the button (below) to find out</p>
+        </div>
+
+        <button class = "button" @click="fetchDogImage()"> CLICK</button>
+        <img :src = "this.url"></img>
     </div>
 
     <script>
@@ -36,7 +43,8 @@
             data() {
                 return {
                     // default dog if fetch fails
-                    url: "https://images.dog.ceo/breeds/rottweiler/n02106550_193.jpg"
+                    url: "https://images.dog.ceo/breeds/rottweiler/n02106550_193.jpg",
+                    visible: false
                 }
             },
 
@@ -55,11 +63,21 @@
                     catch (err) {
                         console.error('failed to fetch dog image', err);
                     }
+                },
+
+                hide() {
+                    if (this.visible == true) {
+                        this.visible = false;
+                    }
+
+                    else {
+                        this.visible = true;
+                    }
                 }
             },
 
-            mounted() {
-                this.url = fetchDogImage()
+            async mounted() {
+                this.fetchDogImage()
             }
         }).mount('#app')
     </script>

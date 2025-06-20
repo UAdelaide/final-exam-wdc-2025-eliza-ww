@@ -13,8 +13,37 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
-      <div v-if = "guest">
-        <a href="login.html" class="btn btn-outline-primary me-2">Log In</a>
+      <div v-if = "loggedIn">
+        <div id="app" class="container py-4">
+    <h1 class="mb-4 text-primary">Log In</h1>
+
+    <div class="card mb-4">
+      <div class="card-header bg-primary text-white">
+        Log In
+      </div>
+
+      <div class="card-body">
+        <form @submit.prevent="logIn">
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input v-model="form.email" type="text" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input v-model="form.password" type="password" class="form-control" required>
+          </div>
+
+          <button type="submit" class="btn btn-success">Log In</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Success or error messages -->
+    <div v-if="message" class="alert alert-info">{{ message }}</div>
+    <div v-if="error" class="alert alert-danger">{{ error }}</div>
+
+    </div>
       </div>
 
       <div v-if = "owner">

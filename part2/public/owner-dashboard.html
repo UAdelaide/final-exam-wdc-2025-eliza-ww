@@ -85,7 +85,7 @@
         function logOut() {
           // remove session data and redirect to index.html
           req.session.destroy();
-          
+          res.clearCookie('connect.sid');
           window.location.href = 'index.html';
         }
 

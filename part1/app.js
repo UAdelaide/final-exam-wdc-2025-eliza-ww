@@ -9,6 +9,8 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+let db; // connection pool for DogWalkService
+
 (async () => {
     try {
         db = await mysql.createConnection({

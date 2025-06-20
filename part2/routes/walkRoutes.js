@@ -40,6 +40,7 @@ router.get('/dogs', async (req, res) => {
   if (!req.session.user) {
     return res.status(500).json({ error: 'Failed to get user' })
   }
+
   const user_id = req.session.user.user_id;
 
   try {

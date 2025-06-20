@@ -52,9 +52,9 @@ router.post('/login', async (req, res) => {
     req.session.save(() => {
       req.session.user = {
         id: rows[0].user_id,
-        username: rows.username,
-
-      }
+        username: rows[0].username,
+        email: rows[0].email
+      };
     })
 
     res.json({ message: 'Login successful', user: rows[0] });

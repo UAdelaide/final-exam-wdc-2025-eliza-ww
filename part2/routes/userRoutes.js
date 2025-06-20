@@ -57,6 +57,8 @@ router.post('/login', async (req, res) => {
       };
     });
 
+    console.log()
+
     res.json({ message: 'Login successful', user: rows[0] });
   }
 

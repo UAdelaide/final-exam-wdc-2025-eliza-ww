@@ -96,6 +96,12 @@
         const error = ref('');
         const owner = ref(false);
 
+        async func getDogs() {
+          try {
+            const response = await fetch('/api/walk')
+          }
+        }
+
         async function checkRole() {
           try {
             const response = await fetch('/api/users/me', {

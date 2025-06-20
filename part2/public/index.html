@@ -111,12 +111,11 @@
 
             if (response.ok) {
               const data = await response.json();
+
               const withImages = await Promise.all(
                 data.map(async (dog) => {
-                  try {
-                    const imageURL = await fetchImages();
-                    return { dog, imageURL };
-                  }
+                  const imageURL = await fetchImages();
+                  return { dog, imageURL };
                 })
               )
               dogs.value = data;

@@ -38,9 +38,9 @@ router.get('/me', (req, res) => {
 router.get('/logout', async(req, res) => {
   req.session.destroy(() => {
     res.clearCookie('connect.sid');
-    res.json({ message: })
-  })
-})
+    res.json({ message: 'Logged out!' });
+  });
+});
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {

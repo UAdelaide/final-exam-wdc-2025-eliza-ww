@@ -28,9 +28,8 @@
             <label class="form-label">Dog ID</label>
 
             <select name = "Dog ID">
-              <option v-for="item in dogs" :key = "item.dog_id" :value = "item.v">
+              <option v-for="item in dogs" :key = "item.dog_id" :value = "item.name">
                 {{ item.dog_id }}
-                <!--  -->
               </option>
             </select>
 

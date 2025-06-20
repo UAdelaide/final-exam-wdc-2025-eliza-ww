@@ -103,7 +103,14 @@
         async function fetchDogs() {
           try {
             const response = await fetch('/api/walkers/dogs');
+
+            if (response.ok) {
+              error.value = 'Failed to fetch dogs from database';
+              return;
+            }
+
             const data = response.json();
+
           }
         }
 

@@ -105,11 +105,12 @@
             const response = await fetch('/api/walkers/dogs');
 
             if (response.ok) {
-              error.value = 'Failed to fetch dogs from database';
-              return;
+              const data = response.json();
             }
 
-            const data = response.json();
+            else {
+              error.value = "Failed to fetch all dogs";
+            }
 
           }
         }

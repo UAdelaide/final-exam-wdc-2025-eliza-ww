@@ -32,7 +32,7 @@ let db; // connection pool for DogWalkService
 
 app.get('/', async (req, res) => {
     try {
-        const [user] = await db.execute('SELECT * FROM Users');
+        const [user] = await db.execute('SELECT * FROM Dogs');
         res.json(user);
     }
 

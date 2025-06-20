@@ -29,7 +29,7 @@
 
             <select v-model="form.dog_id" name = "Dog ID" class="form-select" required>
               <option v-for="item in dogs" :key = "item.dog_id" :value = "item.dog_id">
-                {{ item.dog_name }}
+                {{ item.name }}
               </option>
             </select>
 

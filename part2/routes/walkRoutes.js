@@ -52,7 +52,7 @@ router.get('/dogs', async (req, res) => {
       WHERE owner_id = ?
       `, [user_id]);
 
-      res.json(dogs);
+      res.json(dogs); // respond with the JSON file of dogs
   }
 
   catch (error) {

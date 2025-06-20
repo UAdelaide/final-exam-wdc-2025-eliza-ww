@@ -98,7 +98,7 @@
 
         async func getDogs() {
           try {
-            const response = await fetch('/api/walk')
+            const response = await fetch('/api/walk/{{user.user_id}}/dogs')
           }
         }
 

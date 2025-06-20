@@ -111,6 +111,9 @@
 
             if (response.ok) {
               const data = await response.json();
+              const withImages = await Promise.all(
+                data.map(async dog)
+              )
               dogs.value = data;
             }
 

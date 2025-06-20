@@ -11,6 +11,8 @@ var app = express();
 
 let db; // connection pool for DogWalkService
 
+let db = 
+
 (async () => {
     try {
         console.log("connecting");

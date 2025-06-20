@@ -106,11 +106,11 @@
 
         async function getDogs() {
           try {
-            const response = await fetch('/api/walk/dogs', {
+            const response = await fetch('/api/walks/dogs', {
               credentials: 'include'
             });
 
-            dogs = await response.json();
+            dogs.value = await response.json();
           }
 
           catch {

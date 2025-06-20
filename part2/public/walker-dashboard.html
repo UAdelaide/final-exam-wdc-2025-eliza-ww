@@ -120,7 +120,7 @@
               credentials: 'include',
             });
 
-            const data = response.json(); // obtain JSON response
+            const data = await response.json(); // obtain JSON response
             user.value = data.user_id; // assign user id to user here
 
             console.log("user updated to " + user);

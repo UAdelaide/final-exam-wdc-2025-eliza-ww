@@ -61,7 +61,10 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({})
+                    body: JSON.stringify({
+                        email: form.value.email,
+                        password: form.value.password
+                    })
                 })
             }
 

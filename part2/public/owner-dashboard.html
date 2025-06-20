@@ -85,7 +85,7 @@
         async function logOut() {
           // remove session data and redirect to index.html
           try {
-            const res = await fetch('/api/userslogout', {
+            const res = await fetch('/api/users/logout', {
               method: 'POST',
               credentials: 'include'
             });

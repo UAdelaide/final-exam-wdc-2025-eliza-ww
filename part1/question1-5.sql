@@ -21,7 +21,5 @@ INSERT INTO Dogs (name, size, owner_id) VALUES ("Max", "medium",
 ("Bella", "small",
 (SELECT user_id FROM Users WHERE username = "carol123"));
 
-INSERT INTO Dogs (name, size, owner_id) VALUES ("Max", "medium",
-(SELECT user_id FROM Users WHERE username = "alice123")),
-("Bella", "small",
+INSERT INTO Dogs (dog_id, name, size, owner_id) VALUES (2, "Bella", "small",
 (SELECT user_id FROM Users WHERE username = "carol123"));

@@ -28,8 +28,8 @@ let db; // connection pool for DogWalkService
 
 app.get('/', async (req, res) => {
     try {
-        const [books] = await db.execute('SELECT * FROM books');
-        res.json(books);
+        const [user] = await db.execute('SELECT * FROM Users');
+        res.json(user);
     }
 
     catch (err) {

@@ -113,6 +113,14 @@
           }
         }
 
+        async function getCurrentUser() {
+          try {
+            const response = fetch ('/api/users/me', {
+              
+            })
+          }
+        }
+
         async function applyToWalk(requestId) {
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {

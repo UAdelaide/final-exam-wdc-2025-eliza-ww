@@ -72,17 +72,17 @@
                 const data = await response.json();
 
                 if (!response.ok) {
-                    error.value = "Login failed";
+                    error.value = "Login failed!";
                 }
 
                 else {
-                    message.value = "Login success!"
+                    message.value = "Login successful!";
                 }
             }
 
             catch (err) {
                 error.value = err.message;
-                message.value = '';
+                message.value = "Trouble logging in.";
             }
         }
 

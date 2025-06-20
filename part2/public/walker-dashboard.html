@@ -91,12 +91,14 @@
               credentials: 'include'
             });
 
+            // if successful, redirect
             if (response.ok) {
               window.location.href = 'index.html';
             }
           }
 
           catch (err) {
+            // else, return error
             error.value = 'Error logging out';
           }
         }

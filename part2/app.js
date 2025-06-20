@@ -6,16 +6,18 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.use(session({
     secret: 'secret',
     cookie: {
         httpOnly: true,
+        resave: false,
+        saveUninitialized: false,
         maxAge: 1000 * 60 * 60
     }
 }));
-
-app.use(express.json());
-app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');

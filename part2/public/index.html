@@ -211,6 +211,8 @@
 
         onMounted(() => {
             checkRole(); // check role upon opening
+            fetchImages(); // fetch random image
+            fetchDogs(); // fetch all the dogs from the database
         });
 
         return {

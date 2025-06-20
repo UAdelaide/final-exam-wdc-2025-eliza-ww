@@ -30,7 +30,7 @@
             <input v-model="form.password" type="text" class="form-control" required>
           </div>
 
-          <button type="submit" class="btn btn-success">Create Walk</button>
+          <button type="submit" class="btn btn-success">Log In</button>
         </form>
       </div>
     </div>
@@ -54,7 +54,7 @@
         const message = ref('');
         const error = ref('');
 
-        async function submitWalkRequest() {
+        async function logIn() {
           try {
             const res = await fetch('/api/walks', {
               method: 'POST',

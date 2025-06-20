@@ -6,7 +6,6 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
         // async function to fetch dog image
-
         async function fetchDogImage() {
             try {
                 const URL = await fetch("https://dog.ceo/api/breeds/image/random");
@@ -30,16 +29,16 @@
         <img :src = "URL."></img>
     </div>
 
-<script>
-Vue.createApp ({
-    data() {
-        return {
-            url: NULL
-        }
-    }
-}).mount('#app')
-</script>
-
+    <script>
+        Vue.createApp ({
+            method
+            data() {
+                return {
+                    url: NULL
+                }
+            }
+        }).mount('#app')
+    </script>
 </body>
 
 </html>

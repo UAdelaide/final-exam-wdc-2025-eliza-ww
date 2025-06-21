@@ -24,9 +24,9 @@
       <div class="card-body">
         <form @submit.prevent="submitWalkRequest">
           <div class="mb-3">
+            <!-- shows owned dogs with vue loop -->
             <label class="form-label">Dog ID</label>
 
-            <!-- shows owned dogs with vue loop -->
             <select v-model="form.dog_id" name = "Dog ID" class="form-select" required>
               <option v-for="item in dogs" :key = "item.dog_id" :value = "item.dog_id">
                 {{ item.name }}

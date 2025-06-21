@@ -39,10 +39,3 @@ VALUES ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30,
 ((SELECT dog_id FROM Dogs WHERE name = "Maple"), "2025-06-20 12:25:00", 60, "North Terrace", "open"),
 ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-22 11:30:00", 40, "Rundle St", "open"),
 ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-21 9:00:00", 30, "Elizabeth", "open");
-
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
-VALUES ((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-10 08:00:00", 30, "Parklands", "open"),
-((SELECT dog_id FROM Dogs WHERE name = "Bella"), "2025-06-10 09:30:00", 45, "Beachside Ave", "accepted"),
-((SELECT dog_id FROM Dogs WHERE name = "Maple"), "2025-06-20 12:25:00", 60, "North Terrace", "open"),
-((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-22 11:30:00", 40, "Rundle St", "open"),
-((SELECT dog_id FROM Dogs WHERE name = "Max"), "2025-06-21 9:00:00", 30, "Elizabeth", "open");

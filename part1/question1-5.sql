@@ -11,6 +11,14 @@ VALUES ("alice123", "alice@example.com", "hashed123", "owner"),
 ("orange", "youglad@example.com", "hashed000", "owner"),
 ("clementines", "clemmy@example.com", "hashed003", "walker");
 
+INSERT INTO Users (username, email, password_hash, role)
+VALUES 
+("bobwalker", "bob@example.com", "hashed456", "walker"),
+("carol123", "carol@example.com", "hashed789", "owner"),
+("orange", "youglad@example.com", "hashed000", "owner"),
+("clementines", "clemmy@example.com", "hashed003", "walker");
+
+
 -- Five dogs:
 -- A dog named Max, who is medium-sized and owned by alice123.
 -- A dog named Bella, who is small and owned by carol123.

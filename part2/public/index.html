@@ -117,6 +117,7 @@
               // add images to the dog array, using fetchImages()
               const withImages = await Promise.all(
                 data.map(async (dog) => {
+                  // map to create a new array 
                   const imageURL = await fetchImages();
                   return { ...dog, imageURL }; // merge them together
                 })

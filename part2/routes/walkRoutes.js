@@ -46,7 +46,6 @@ router.get('/dogs', async (req, res) => {
     }
 });
 
-// GET a list of dogs that an user owns
 router.get('/ownedDogs', async (req, res) => {
   if (!req.session.user) {
     // user is invalid
@@ -63,7 +62,7 @@ router.get('/ownedDogs', async (req, res) => {
       WHERE owner_id = ?
       `, [user_id]);
 
-      res.json(dogs); // respond with the JSON file of dogs
+      res.json(dogs); // respond with the list of dogs
   }
 
   catch (error) {

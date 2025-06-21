@@ -49,7 +49,7 @@ router.get('/dogs', async (req, res) => {
 // GET a list of dogs that an user owns
 router.get('/ownedDogs', async (req, res) => {
   if (!req.session.user) {
-    // user is invalid?
+    // user is invalid
     return res.status(500).json({ error: 'Failed to get user' });
   }
 

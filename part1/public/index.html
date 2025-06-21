@@ -66,7 +66,7 @@
                 },
 
                 hide() {
-                    // hide contents of 
+                    // hide contents of the "about" div
                     if (this.visible == true) {
                         this.visible = false;
                     }
@@ -78,6 +78,7 @@
             },
 
             async mounted() {
+                // call fetchDogImage() upon loading page
                 this.fetchDogImage()
             }
         }).mount('#app')

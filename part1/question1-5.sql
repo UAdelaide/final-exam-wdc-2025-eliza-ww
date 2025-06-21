@@ -21,8 +21,12 @@ VALUES ("Max", "medium",
 (SELECT user_id FROM Users WHERE username = "alice123")),
 ("Bella", "small",
 (SELECT user_id FROM Users WHERE username = "carol123")),
-("Maple", "medium",
-(SELECT user_id FROM Users WHERE username = "eliza"));
+("Spots", "large",
+(SELECT user_id FROM Users WHERE username = "alice123")),
+("Cerberus", "large",
+(SELECT user_id FROM Users WHERE username = "orange")),
+("Blue", "small",
+(SELECT user_id FROM Users WHERE username = "alice123"));
 
 -- Five walk requests:
 -- A request for Max at 2025-06-10 08:00:00 for 30 minutes at Parklands, with status open.

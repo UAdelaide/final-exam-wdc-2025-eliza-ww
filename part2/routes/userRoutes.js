@@ -66,6 +66,7 @@ router.post('/login', async (req, res) => {
       role: rows[0].role
     };
 
+    // force save
     req.session.save(() => {
       console.log(req.session.user.username + " has been logged in"); // TESTING
       res.json({ message: 'Login successful', user: rows[0] });

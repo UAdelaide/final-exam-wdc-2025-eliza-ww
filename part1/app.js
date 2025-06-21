@@ -17,7 +17,6 @@ let db = mysql.createPool({
 });
 
 // Return a list of all dogs with their size and owner's username.
-
 app.get('/api/dogs', async (req, res) => {
     try {
         const [dogs] = await db.execute('SELECT name, size, username FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id');
@@ -31,7 +30,6 @@ app.get('/api/dogs', async (req, res) => {
 
 // Return all open walk requests
 // including the dog name, requested time, location, and owner's username.
-
 app.get('/api/walkrequests/open', async (req, res) => {
     try {
         const [requests] = await db.execute('SELECT request_id, Dogs.name AS dog_name, WalkRequests.requested_time, WalkRequests.duration_minutes, location, username AS owner_username FROM WalkRequests JOIN Dogs ON Dogs.dog_id = WalkRequests.dog_id JOIN Users ON Users.user_id = Dogs.owner_id WHERE status = "open";');
@@ -45,7 +43,6 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
 // Return a summary of each walker with their average rating
 // and number of completed walks.
-
 app.get('/api/walkers/summary', async (req, res) => {
     try {
         const [walkers] = await db.execute('SELECT username AS walker_username, COUNT(username) AS total_ratings, AVG(rating) AS average_rating, COUNT(username) AS completed_walks FROM WalkRatings JOIN Users ON WalkRatings.walker_id = Users.user_id GROUP BY username;');

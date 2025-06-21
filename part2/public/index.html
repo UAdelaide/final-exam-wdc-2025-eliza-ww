@@ -205,7 +205,7 @@
             }
 
             else {
-              loggedIn.value = false;
+              loggedIn.value = false; // else prevent logging in
             }
           }
 
@@ -217,11 +217,11 @@
         function redirect(role) {
           // redirect to dash board
 
-          if (role === 'owner') {
+          if (role === 'owner') { // if owner, redirect to owner-dashboard
             window.location.href = 'owner-dashboard.html';
           }
 
-          else if (role === 'walker') {
+          else if (role === 'walker') { // if walker, redirect to walker-dashboard
             window.location.href = 'walker-dashboard.html';
           }
         }

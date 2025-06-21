@@ -28,19 +28,6 @@ VALUES ("Max", "medium",
 ("Blue", "small",
 (SELECT user_id FROM Users WHERE username = "alice123"));
 
-INSERT INTO Dogs (name, size, owner_id)
-VALUES ("Max", "medium",
-(SELECT user_id FROM Users WHERE username = "alice123")),
-("Bella", "small",
-(SELECT user_id FROM Users WHERE username = "carol123")),
-("Spots", "large",
-(SELECT user_id FROM Users WHERE username = "alice123")),
-("Cerberus", "large",
-(SELECT user_id FROM Users WHERE username = "orange")),
-("Blue", "small",
-(SELECT user_id FROM Users WHERE username = "alice123"));
-
-
 -- Five walk requests:
 -- A request for Max at 2025-06-10 08:00:00 for 30 minutes at Parklands, with status open.
 -- A request for Bella at 2025-06-10 09:30:00 for 45 minutes at Beachside Ave, with status accepted.

@@ -16,7 +16,7 @@ let db = mysql.createPool({
     database: 'DogWalkService'
 });
 
-// Return a list of all dogs with their size and owner's username.
+// returns a list of all dogs with their size and owner's username.
 app.get('/api/dogs', async (req, res) => {
     try {
         const [dogs] = await db.execute('SELECT name, size, username FROM Dogs JOIN Users ON Dogs.owner_id = Users.user_id');
@@ -28,7 +28,7 @@ app.get('/api/dogs', async (req, res) => {
     }
 });
 
-// Return all open walk requests
+// returns all open walk requests
 // including the dog name, requested time, location, and owner's username.
 app.get('/api/walkrequests/open', async (req, res) => {
     try {
@@ -41,7 +41,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
     }
 });
 
-// Return a summary of each walker with their average rating
+// return a summary of each walker with their average rating
 // and number of completed walks.
 app.get('/api/walkers/summary', async (req, res) => {
     try {
